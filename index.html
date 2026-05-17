@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neon Tic-Tac-Toe</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Header Section -->
+        <header>
+            <h1 class="glitch-title" data-text="TIC-TAC-TOE">TIC-TAC-TOE</h1>
+            <p class="subtitle">QUANTUM EDITION</p>
+        </header>
+
+        <!-- Mode Selection -->
+        <div class="mode-selector glass-panel">
+            <button id="btn-pvp" class="mode-btn active">Player vs Player</button>
+            <button id="btn-pvc" class="mode-btn">Player vs AI</button>
+        </div>
+
+        <!-- Difficulty Selection (Hidden by default, shown in PVC) -->
+        <div id="difficulty-selector" class="difficulty-selector glass-panel hidden">
+            <button class="diff-btn" data-level="easy">Easy</button>
+            <button class="diff-btn active" data-level="medium">Medium</button>
+            <button class="diff-btn" data-level="unbeatable">Unbeatable</button>
+        </div>
+
+        <!-- Scoreboard -->
+        <div class="scoreboard glass-panel">
+            <div class="score-card player-x">
+                <h3>Player X</h3>
+                <span id="score-x" class="score-value">0</span>
+            </div>
+            <div class="score-card draw">
+                <h3>Draws</h3>
+                <span id="score-draw" class="score-value">0</span>
+            </div>
+            <div class="score-card player-o">
+                <h3 id="label-o">Player O</h3>
+                <span id="score-o" class="score-value">0</span>
+            </div>
+        </div>
+
+        <!-- Game Area -->
+        <main class="game-area">
+            <div id="turn-indicator" class="turn-indicator">
+                <span class="turn-text">PLAYER X TURN</span>
+            </div>
+            
+            <div class="tic-tac-toe-grid" id="grid">
+                <div class="cell" data-index="0"></div>
+                <div class="cell" data-index="1"></div>
+                <div class="cell" data-index="2"></div>
+                <div class="cell" data-index="3"></div>
+                <div class="cell" data-index="4"></div>
+                <div class="cell" data-index="5"></div>
+                <div class="cell" data-index="6"></div>
+                <div class="cell" data-index="7"></div>
+                <div class="cell" data-index="8"></div>
+            </div>
+        </main>
+
+        <!-- Controls -->
+        <div class="controls">
+            <button id="btn-restart" class="action-btn restart-btn">
+                <span class="btn-text">RESTART GAME</span>
+                <div class="btn-glow"></div>
+            </button>
+            <button id="btn-reset-scores" class="action-btn secondary-btn">
+                <span class="btn-text">RESET SCORES</span>
+            </button>
+        </div>
+    </div>
+
+    <!-- Result Modal -->
+    <div id="result-modal" class="modal-overlay hidden">
+        <div class="modal-content glass-panel">
+            <h2 id="result-message">Player X Wins!</h2>
+            <button id="btn-play-again" class="action-btn primary-btn">PLAY AGAIN</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
